@@ -1,0 +1,71 @@
+@font-face {
+    font-family: maria_lucia;
+    src: url("resources/fuentes/Letters for Learners.ttf");
+}
+
+html {
+    font-family: maria_lucia, monospace;
+    font-weight: bold;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+#calculadora {
+    background-color: hsla(309, 71%, 63%, 0.22);
+    min-width: 350px;
+    min-height: fit-content;
+    min-height: -moz-fit-content;
+    border: 14px solid rgb(226, 122, 255);
+    padding: 12px;
+}
+
+#calculadora>* {
+    /* border: 1px solid rgb(193, 193, 193); */
+    height: 80%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#calculadora>input[type=button] {
+    cursor: pointer;
+    background-color: rgb(243, 200, 255);
+    font-size: 24px;
+    min-height: 43px;
+}
+
+#calculadora>input:hover {
+    background-color: hsl(287, 100%, 85%);
+}
+
+.grid-calc {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem 1rem;
+}
+
+#screen {
+    grid-column: 1/-1;
+    background-color: rgb(254, 227, 255);
+    /* padding: 0 20px; */
+    font-size: 40px;
+    width: -moz-available;
+    text-align: right;
+    padding: 0 12px;
+}
+
+#banner {
+    grid-column: 1/3;
+    height: 80%;
+    display: flex;
+}
+
+#banner img {
+    max-width: 65%;
+    max-height: 65%;
+    margin: auto;
+}

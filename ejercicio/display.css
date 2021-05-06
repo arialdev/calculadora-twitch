@@ -1,0 +1,15 @@
+/* 
+**   Este archivo sirve únicamente para tener la calculadora centrada en la página.
+*   La idea es que si necesitamos hacer más ajustes en cómo se ve la página en
+*   general se hagan aquí. Más que el cómo se ve un botón o de qué tamaño
+*   ponerle al texto, se trata más de la maquetación.
+*/
+
+.centered-in-doc {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
