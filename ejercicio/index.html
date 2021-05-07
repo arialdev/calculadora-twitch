@@ -13,37 +13,34 @@ Esto tampoco es programar, es un lenguaje de marcado.
     <link rel="stylesheet" href="style.css">
     <!-- También adjuntamos las hojas de estilo antes de meter el contenido de la página para que cuando el contenido se cargue ya lo haga bonito -->
     <link rel="stylesheet" href="display.css">
-    <title>Mi calculadora</title> <!-- El título de nuestra página (lo que se ve en la pestaña) -->
 </head>
 
 <!-- Dentro de body metemos el contenido -->
 <body>
     <div id="calculadora" class="grid-calc centered-in-doc">
         <!-- <div id="screen"><span id="result">0</span></div> -->
-        <input id="screen" type="text" value="0" onclick="clearScreen()" readonly>
+        <input id="screen" type="text" value="0" onclick="" readonly>
         <a id="banner" href="https://www.twitch.tv/arialdev" rel="author" target="_blank"><img
                 src="resources/twitch.png" alt="Twitch logo"></a>
-        <input type="button" value="C" onclick="clearScreen()">
-        <input type="button" value="/" data-operator="dividir" onclick="addToCalc(this)">
-        <input type="button" value="7" onclick="addToCalc(this)">
-        <input type="button" value="8" onclick="addToCalc(this)">
-        <input type="button" value="9" onclick="addToCalc(this)">
-        <input type="button" value="x" data-operator="multiplicar" onclick="addToCalc(this)">
-        <input type="button" value="4" onclick="addToCalc(this)">
-        <input type="button" value="5" onclick="addToCalc(this)">
-        <input type="button" value="6" onclick="addToCalc(this)">
-        <input type="button" value="-" data-operator="restar" onclick="addToCalc(this)">
-        <input type="button" value="1" onclick="addToCalc(this)">
-        <input type="button" value="2" onclick="addToCalc(this)">
-        <input type="button" value="3" onclick="addToCalc(this)">
-        <input type="button" value="+" data-operator="sumar" onclick="addToCalc(this)">
-        <input type="button" value="," onclick="addToCalc(this)">
-        <input type="button" value="0" onclick="addToCalc(this)">
-        <input type="button" value="←" onclick="deleteLast()">
-        <input type="button" value="=" onclick="resolve()">
+        <input type="button" value="C" onclick="">
+        <input type="button" value="/" data-operator="dividir" onclick="">
+        <input type="button" value="7" onclick="">
+        <input type="button" value="8" onclick="">
+        <input type="button" value="9" onclick="">
+        <input type="button" value="x" data-operator="multiplicar" onclick="">
+        <input type="button" value="4" onclick="">
+        <input type="button" value="5" onclick="">
+        <input type="button" value="6" onclick="">
+        <input type="button" value="-" data-operator="restar" onclick="">
+        <input type="button" value="1" onclick="">
+        <input type="button" value="2" onclick="">
+        <input type="button" value="3" onclick="">
+        <input type="button" value="+" data-operator="sumar" onclick="">
+        <input type="button" value="," onclick="">
+        <input type="button" value="0" onclick="">
+        <input type="button" value="←" onclick="">
+        <input type="button" value="=" onclick="">
     </div>
-    <!-- ATENCIÓN. La parte programada debe ir siempre al final del body. Esto es porque es lo que más suele tardar en cargar pero no es algo que normalmente necesitemos desde el instante 0 -->
-    <script src="script.js"></script>
 </body>
 
 </html>

@@ -84,9 +84,9 @@ html {
 /*  También podemos hacer ajustes a eventos, como cuando pasamos el cursor sobre
 *   un elemento (hover).
 *   En este  caso estamos haciendo que los elementos input de dentro de
-*   calculadora, cuando pasemos el cursor sobre ellos, tomen un color rosado.
+*   calculadora, menos el que tiene el id=screen, cuando pasemos el cursor sobre ellos, tomen un color rosado.
 */
-#calculadora>input:hover {
+#calculadora>input:hover:not(#screen) {
     background-color: rgb(238, 179, 255);   /*Elegimos un color más oscuro de rosa para que se note que tenemos el cursor encima*/
 }
 

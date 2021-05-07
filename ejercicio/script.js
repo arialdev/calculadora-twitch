@@ -28,7 +28,7 @@ function addToCalc(elemento) {
         /**Esto es un truco que hacemos para que cuando se haya escogido el operador, y ya vayamos a escribir el segundo operando,
          * la siguiente vez que pulsemos un número no se concatene al final de lo anteriormente escrito, sino que empiece de cero en la pantalla
          */
-        if (operador) screen.value = 0; 
+        if (operador) screen.value = 0;
         if (screen.value == 0) {    //Si es el primer número, borramos el cero que había en pantalla y lo sustituimos por este
             screen.value = elemento.value;
         }
@@ -39,19 +39,15 @@ function addToCalc(elemento) {
 }
 
 function clearScreen() {
-    /** Reseteamos todos los registros y escribimos un cero en la pantalla, borrando todo lo demás */
-    screen.value = 0;
-    operando1 = null;
-    operando2 = null;
-    operador = null;
+
 }
 
 function deleteLast() {
     const value = screen.value; //obtengo el valor actual de la pantalla
     let newValue = value.slice(0, -1)   //creo una nueva variable con el valor anterior salvo el último dígito
-    if (newValue == '') {    
+    if (newValue == '') {
         /*Si ya no hay ningún valor, significa que antes sólo había un dígito, y ahora no hay ningúno, por lo
-        que directamente escribimos un cero para que la pantalla no esté vacía*/   
+        que directamente escribimos un cero para que la pantalla no esté vacía*/
         screen.value = 0;
     }
     else {
@@ -65,26 +61,7 @@ function resolve() {
     operando2 = screen.value;
     let resultado = 0;
     switch (operador) { //Esto es como un if pero con varias posibilidades en vez de un if-else (2 posibilidades)
-        case 'sumar': {
-            resultado = +operando1 + +operando2;
-            break;  //con break salimos del switch para que no haga falta evaluar el resto de condiciones
-        }
-        case 'restar': {
-            resultado = operando1 - operando2;
-            break;
-        }
-        case 'multiplicar': {
-            resultado = operando1 * operando2;
-            break;
-        }
-        case 'dividir': {
-            resultado = operando1 / operando2;
-            break;
-        }
+        
     }
-    //Ya tenemos el resultado, por lo que lo imprimimos por pantalla y reseteamos los registros
-    screen.value = resultado;
-    operando1 = null;
-    operando2 = null;
-    operador = null;
+    clearScreen();
 }

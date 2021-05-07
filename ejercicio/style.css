@@ -44,7 +44,7 @@ html {
 *   Si el selector comienza con almohadilla, me refiero al id del elemento.
 */
 #calculadora {
-    background-color: hsla(309, 71%, 63%, 0.22);    /* Ajusto el color del fondo*/
+    background-color: rgba(228, 94, 208, 0.22);    /* Ajusto el color del fondo*/
     min-width: 350px;                                 /* Establezco un valor mínimo de anchura para que no se quede esmirriada*/  
     min-height: fit-content;                          /* Le digo que de alto ocupe, cómo mínimo, lo que mida el elemento, no menos (para que no se corte la vista). */  
     /*  A veces lo que funciona en Google Chrome no funciona en Safari, y puede funcionar
@@ -64,7 +64,6 @@ html {
 *   con id=calculadora
 */
 #calculadora>* {
-    /* border: 1px solid rgb(193, 193, 193); */
     height: 80%;                /* Que ocupe el 80% de la altura que tenga disponible*/  
     display: inline-flex;       /* Esto es un ajuste para que podamos hacer los ajustes siguientes*/
     align-items: center;        /* Que los elementos estén centrados verticalmente */
@@ -75,9 +74,6 @@ html {
 *   de 'calculadora' sólo aplico a los elementos input de tipo button
 */
 #calculadora>input[type=button] {
-    cursor: pointer;        /*Que el cursor cambie y ahora sea una manita que señana en vez de la típica flecha*/
-    background-color: rgb(243, 200, 255);
-    font-size: 24px;        /* Aumentamos el tamaño de fuente para que se vean bien los botones*/
     min-height: 43px;       /* Estipulamos una altura mínima para los botones, para que sean grandecitos */
 }
 
@@ -86,9 +82,7 @@ html {
 *   En este  caso estamos haciendo que los elementos input de dentro de
 *   calculadora, cuando pasemos el cursor sobre ellos, tomen un color rosado.
 */
-#calculadora>input:hover {
-    background-color: rgb(238, 179, 255);   /*Elegimos un color más oscuro de rosa para que se note que tenemos el cursor encima*/
-}
+
 
 /*  Antes hemos visto que para buscar a un elemento por su id usamos la almohadilla.
 *   El id es de caracter único, no puede haber dos elementos con el mismo id.
@@ -115,8 +109,6 @@ html {
     background-color: rgb(254, 227, 255);
     font-size: 40px;
     width: -moz-available;  /*¿Cuánto de ancho? TODO LO POSIBLE!!!*/
-    text-align: right;      /* El texto de la pantalla lo alineamos a la derecha*/
-    padding: 0 12px;        /* Dejamos un espacio entre el fin de la pantalla y el texto de la pantalla*/
 }
 
 #banner {
