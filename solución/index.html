@@ -1,16 +1,22 @@
+<!-- Esto es un documento HTML. Quienes habréis trabajado con LaTeX o MarkDown veréis grandes similitudes.
+Esto tampoco es programar, es un lenguaje de marcado.
+-->
 <!DOCTYPE html>
 <html lang="es">
 
+<!-- Aquí ponemos información sobre la página, NO SE METE EL CONTENIDO -->
 <head>
-    <meta charset="UTF-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <meta charset="UTF-8"> <!-- Para que permita caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=0.8"> <!-- Para que se vea bien en los móviles -->
     <link rel="icon" type="image/png" href="https://img.icons8.com/color/48/000000/math.png">
+    <!--Aquí adjuntamos el icono que se muestra en la pestaña -->
     <link rel="stylesheet" href="style.css">
+    <!-- También adjuntamos las hojas de estilo antes de meter el contenido de la página para que cuando el contenido se cargue ya lo haga bonito -->
     <link rel="stylesheet" href="display.css">
-    <title>Mi calculadora</title>
+    <title>Mi calculadora</title> <!-- El título de nuestra página (lo que se ve en la pestaña) -->
 </head>
 
+<!-- Dentro de body metemos el contenido -->
 <body>
     <div id="calculadora" class="grid-calc centered-in-doc">
         <!-- <div id="screen"><span id="result">0</span></div> -->
@@ -36,6 +42,7 @@
         <input type="button" value="←" onclick="deleteLast()">
         <input type="button" value="=" onclick="resolve()">
     </div>
+    <!-- ATENCIÓN. La parte programada debe ir siempre al final del body. Esto es porque es lo que más suele tardar en cargar pero no es algo que normalmente necesitemos desde el instante 0 -->
     <script src="script.js"></script>
 </body>
 

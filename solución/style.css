@@ -1,61 +1,122 @@
+/*
+**  ¡Hola Mundo! Esto es una hoja de estilos. Esto no es 'programar', sino que sirve
+*   para configurar cómo queremos que se vea nuestra página.
+*
+**  Ejemplos: ajustar el tamaño de fuente del texto, cambiar el color del fondo,
+*   dejár márgenes a los lados, etc.
+*
+**  Normalmente es conveniente separar estos ajustes en diferentes documentos
+*   para separar lo que sirve para ajustar la maquetación, aplicar las fuentes
+*   estilográficas, ajustes estéticos menores, etc.
+*
+**  Por tanto, también es conveniente escribir una pequeña descripción en
+*   formato de comentario, como lo es este, para explicar qué función tiene cada
+*   hoja de estilos.
+*
+*   Esta hoja, en concreto, está un poco hecha un popurrí porque tampoco es
+*   demasiado grande. Por eso mismo mezclo fuente estilográficas con otros
+*   ajustes, como el diseño de los botones.
+*/
+
+/*  Importo la fuente llamada maria_lucia que se encuentra dentro de la carpeta
+*   resources/fuentes
+*/
 @font-face {
     font-family: maria_lucia;
     src: url("resources/fuentes/Letters for Learners.ttf");
 }
 
+/*  Aplico una serie de ajustes para TODO el documento */
 html {
-    font-family: maria_lucia, monospace;
-    font-weight: bold;
+    font-family: maria_lucia, monospace;    /* Aplico la fuente importada a todo el documento*/
+    font-weight: bold;  /* Además, en negrita */
 }
 
+/*  Esto sirve para que desde móvil se vea bien, para que se ajuste al ancho de la pantalla */
 @-ms-viewport {
     width: device-width;
 }
 
+/*  Lo que vemos antes de los corchetes se llama selector, y sirve para
+*   seleccionar a qué grupod elementos aplico los ajustes de dentro de los
+*   corchetes.
+*
+*   Si el selector comienza con almohadilla, me refiero al id del elemento.
+*/
 #calculadora {
-    background-color: hsla(309, 71%, 63%, 0.22);
-    min-width: 350px;
-    min-height: fit-content;
+    background-color: hsla(309, 71%, 63%, 0.22);    /* Ajusto el color del fondo*/
+    min-width: 350px;                                 /* Establezco un valor mínimo de anchura para que no se quede esmirriada*/  
+    min-height: fit-content;                          /* Le digo que de alto ocupe, cómo mínimo, lo que mida el elemento, no menos (para que no se corte la vista). */  
+    /*  A veces lo que funciona en Google Chrome no funciona en Safari, y puede funcionar
+    *   pero distinto en Firefox. Es por ello que debemos tener en cuenta los distintos
+    *   navegadores y hacer pequeños ajustes */  
     min-height: -moz-fit-content;
-    border: 14px solid rgb(226, 122, 255);
-    padding: 12px;
+
+    border: 14px solid rgb(226, 122, 255);  /*A nuestra calculadora le ponemos un borde que mdia 14 píxeles, sea rosita y que sea normal (solid)*/  
+    padding: 12px;                            /* Que mantenga un margen con los elementos del interior de 12 píxeles*/  
 }
 
+/*  Puedo concatenar selectores para filtrar mejor a qué elementos aplicar.
+*   El > sirve para aplicar a todos los elementos del tipo de la derecha que
+*   se encuentren directamente dentro del elemento de la izquierda.
+*   El * sirve para aplicar a todos los elementos, por lo que con este
+*   selector estámos aplicando a todos los elementos hijos dentro del elemento
+*   con id=calculadora
+*/
 #calculadora>* {
     /* border: 1px solid rgb(193, 193, 193); */
-    height: 80%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    height: 80%;                /* Que ocupe el 80% de la altura que tenga disponible*/  
+    display: inline-flex;       /* Esto es un ajuste para que podamos hacer los ajustes siguientes*/
+    align-items: center;        /* Que los elementos estén centrados verticalmente */
+    justify-content: center;    /* Que los elementos estén centrados horizontalmente*/
 }
 
+/*  Aquí es similar, sólo que en vez de aplicar a todos los elementos de dentro
+*   de 'calculadora' sólo aplico a los elementos input de tipo button
+*/
 #calculadora>input[type=button] {
-    cursor: pointer;
+    cursor: pointer;        /*Que el cursor cambie y ahora sea una manita que señana en vez de la típica flecha*/
     background-color: rgb(243, 200, 255);
-    font-size: 24px;
-    min-height: 43px;
+    font-size: 24px;        /* Aumentamos el tamaño de fuente para que se vean bien los botones*/
+    min-height: 43px;       /* Estipulamos una altura mínima para los botones, para que sean grandecitos */
 }
 
+/*  También podemos hacer ajustes a eventos, como cuando pasamos el cursor sobre
+*   un elemento (hover).
+*   En este  caso estamos haciendo que los elementos input de dentro de
+*   calculadora, cuando pasemos el cursor sobre ellos, tomen un color rosado.
+*/
 #calculadora>input:hover {
-    background-color: hsl(287, 100%, 85%);
+    background-color: rgb(238, 179, 255);   /*Elegimos un color más oscuro de rosa para que se note que tenemos el cursor encima*/
 }
 
+/*  Antes hemos visto que para buscar a un elemento por su id usamos la almohadilla.
+*   El id es de caracter único, no puede haber dos elementos con el mismo id.
+*   Sin embargo, ¿qué ocurre cuando queremos tratar a dos elementos por igual 
+*   aunque no sean iguales (vease la estética de los diferentes botones de la 
+*   calculadora)?.
+*   Para esto podemos decir que ciertos elementos pertenecen a la misma clase.
+*   Un elemento puede tener entre varias clases, o ninguna. Para seleccionar por
+*   clase escribirmos el nombre de la clase precedida por un '.'.
+*/
 .grid-calc {
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 1rem 1rem;
+    text-align: center; /*El texto estará justificado en el centro, en vez de alineado a la izquierda (por defecto)*/
+    display: grid;      /*Decimos que queremos tratar a los elementos de dentro como si fuera una tabla*/
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Queremos tener 5 columnas de tamaño 1fr (columnas de botones) */
+    grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr 1fr;  /* Queremos tener 6 filas, todas de tamaño 1fr (botones) salvo la primera, que será más grande (la pantalla)*/
+    gap: 1rem 1rem;   /*Dejamos un espacio de 1rem entre filas y columnas. 1rem es equivalente a 16 píxeles (pero es una medida relativa)*/
 }
 
 #screen {
+    /*  Especifico cuánto de ancho de las columnas debe ocupar la pantalla. Aquí podría decir de la 1(inicio)
+    *   a las 6(inicio, que es también el final de la 5), pues tenemos 5 columnas, pero un truco es poner hasta 
+    *   la -1, que es lo mismo y así no necesitas saber cuántas columnas tienes*/
     grid-column: 1/-1;
     background-color: rgb(254, 227, 255);
-    /* padding: 0 20px; */
     font-size: 40px;
-    width: -moz-available;
-    text-align: right;
-    padding: 0 12px;
+    width: -moz-available;  /*¿Cuánto de ancho? TODO LO POSIBLE!!!*/
+    text-align: right;      /* El texto de la pantalla lo alineamos a la derecha*/
+    padding: 0 12px;        /* Dejamos un espacio entre el fin de la pantalla y el texto de la pantalla*/
 }
 
 #banner {
@@ -64,8 +125,19 @@ html {
     display: flex;
 }
 
+/*  Antes hemos usado el caracter > para especificar que los elementos que
+*   queríamos era los que estaban inmediatamente después del elemento de la
+*   izquierda. Sin embargo, si no nos importa que esté inmediatamente detrás
+*   (elemento hijo), y no nos importa que sea nieto, tataranieto, etc, 
+*   simplemente escribimos el otro selector tras un espacio. 
+*
+*   En este caso estamos buscando los elementos imágen que estén dentro del
+*   elemento con id=banner. No no simporta que hayan otras cosas entre medias.
+*/
 #banner img {
     max-width: 65%;
     max-height: 65%;
-    margin: auto;
+    /*  Que tenga un margen automático dentro del espacio disponible para el elemento.
+    *   Esto suele significar que centramos el elemento en todos los ejes */
+    margin: auto;   
 }
